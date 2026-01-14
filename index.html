@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>献立ルーレット</title>
+    <title>献立ルーレット Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,12 +19,31 @@
                     やる気ある日
                 </button>
             </div>
+
+            <div class="submission-area">
+                <h3>献立を追加する</h3>
+                <div class="input-group">
+                    <input type="text" id="input-dish" placeholder="例: カレーライス" maxlength="20">
+                    <select id="input-mood">
+                        <option value="tired">疲れてる日</option>
+                        <option value="energetic">やる気ある日</option>
+                    </select>
+                </div>
+                <button id="btn-submit" class="btn btn-secondary btn-small">追加</button>
+            </div>
         </section>
 
         <section id="result-screen" class="screen hidden">
             <h2 class="result-label">今日の献立は...</h2>
+            
             <div id="dish-display" class="dish-name">
                 </div>
+
+            <div class="reaction-area">
+                <button id="btn-like" class="btn-like">
+                    👍 いいね！ <span id="like-count">0</span>
+                </button>
+            </div>
             
             <div class="button-group">
                 <button id="btn-retry" class="btn btn-secondary">
@@ -40,6 +59,9 @@
             </div>
         </section>
     </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
     <script src="script.js"></script>
 </body>
